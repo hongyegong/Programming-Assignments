@@ -10,8 +10,8 @@ use App\Http\Controllers\Controller;
 class WeatherController extends Controller
 {
     //
+		public function getWeather($location) {
+			return "Hello from " . $location;  
+		}
 }
 
-public function getWeather($location) {
-	return "Hello from " . $location;  
-}
