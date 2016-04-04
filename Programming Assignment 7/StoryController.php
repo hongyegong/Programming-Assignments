@@ -41,7 +41,8 @@ class StoryController extends Controller
      */
     public function create()
     {
-        //
+        $locations = Loaction::all();
+        return view('story.create', ['locations' => $locations]);
     }
 
     /**
@@ -52,7 +53,12 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         DB::table('stories')->insert([ //,
+            'location_id' => $request->input('location_id'),
+            'title' => $request->input('title'),,
+            'story' => $request->input('story'),,
+            'published' => $request->input('published', false),,
+        ]);
     }
 
     /**
